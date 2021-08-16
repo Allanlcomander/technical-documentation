@@ -1,21 +1,24 @@
 *{
     box-sizing: border-box;
      padding: 0; 
-    margin: 0;  
+     margin: 0;  
     font-family: 'Prompt', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
+    color: #696A6E;
     line-height: 24px;
+    font-weight: 400;
 }
 
 
 
 p{
-    padding: 10px 0px 10px 10px;
-    font-weight: 300;
+    padding: 10px
+    
 }
+
 header{
-    font-size: 50px;
-    font-weight: 500;
+    font-size: 50px; 
+    font-weight: 500; 
     padding: 16px 0px;
 }
 
@@ -33,12 +36,13 @@ ul li{
 
 
 
+
 /* grid layout */
 
 [class*="col-"] {
     float: left;
 
-     /* border: 1px solid red;  */
+    
     
 }
 
@@ -104,36 +108,30 @@ ul li{
 
 .fixed-header{
     position: fixed;
-    font-size: 1.8rem;
+    font-size: 28px;
     padding: 1rem 1rem;
-    background-color: White;
+    background-color: #ffffff;
     width: 22%;
+    color: #000000;
 }
- /*#navbar{
-    position: fixed;
-    width: 300px;
-    border-right: 1px solid black;
-    height: 600px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    z-index: 5; 
-    
-} */
+ 
 
 .nav-link{
     display: block;
     text-decoration: none;
     padding: 13px 0px 13px 20px;
-    border-top: 1px solid black;
-    color: #696A6E; 
+    border-top: 1px solid #000000;
+     
 }
+.fixed-col{
+    max-width: 300px;
+} 
 
 .scroll{
     
     margin-top: 80px; 
     position: fixed;
     width: 300px;
-    /* border-right: 2px solid black; */
     height: 550px;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -141,20 +139,12 @@ ul li{
     
 }
 
-
-
-
-
-  .fixed-col{
-    
-    max-width: 300px;
-    
-}  
+ 
 .content{
-    border-left: 2px solid black;
+    border-left: 2px solid #000000;
     margin-left: 300px;
     overflow-x: hidden;
-    padding: 0px 40px;
+    padding: 15px 40px;
 } 
 
 .content header{
@@ -162,13 +152,93 @@ ul li{
     color: black;
 }
 
-.content p,li{
-    color: #696A6E;
-}
-
 code{
-    background: gray;
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #f7f7f7;
     padding: 15px;
-    width: 800px;
+    margin: 10px;
+    border-radius: 5px;
 }
 
+/* mobile views */
+
+@media (min-width: 320px) and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+        padding: 15px;
+        
+      }
+      .row{
+        width: 100%;
+      }
+      .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    body{
+        font-size: 16px;
+    }
+
+    .fixed-header{
+        position:static;
+        font-size: 30px;
+        padding: 15px;
+        text-align: center;
+        background-color: #ffffff;
+        width: 100%;
+        color: #000000;
+        z-index: 10;
+    }
+    .fixed-col{
+    
+        max-width: 100%;
+        padding: 0;
+        
+    }  
+      .scroll{
+          position: static;
+          width: 98%;
+          margin: 0 auto;
+        
+          border-radius: 5px;
+          height: 250px;
+          overflow-x: hidden;
+          overflow-y: scroll; 
+          z-index: 5; 
+          background-color: #f7f7f7;
+      }
+
+      .nav-link{
+          padding: 15px;
+      }
+
+      .content{
+        position:static;
+        margin: 0;
+        padding: 15px;
+        border-left: 0px;
+    
+    }
+
+
+    .content header{
+        font-size: 24px;
+    }
+}
+
+
+@media (width: 1440px){
+
+    .scroll{
+            width: 300px;
+            height: auto;
+    }
+}
